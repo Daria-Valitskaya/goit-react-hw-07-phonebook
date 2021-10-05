@@ -12,7 +12,6 @@ import {
 import contactReducers from "./Contacts/contacts-reducer";
 import logger from "redux-logger";
 import storage from "redux-persist/lib/storage";
-// const store = createStore(rootReducer, composeWithDevTools());
 const persistConfig = {
   key: "root",
   storage,
