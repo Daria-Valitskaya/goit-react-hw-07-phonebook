@@ -2,11 +2,10 @@ import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import ContactItem from "../ContactItem/ContactItem";
 import { onDeleteContact } from "../../redux/Contacts/contacts-actions";
+import { getVisibleContacts } from "../../redux/Contacts/contacts-selectors";
 
 const ContactList = () => {
-  const contacts = useSelector((state) =>
-    filteredVisibleContacts(state.contacts.items, state.contacts.filter)
-  );
+  const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
   const deleteContact = (id) => dispatch(onDeleteContact(id));
   return (
@@ -33,12 +32,6 @@ ContactList.propTypes = {
       number: PropTypes.string.isRequired,
     })
   ),
-};
-const filteredVisibleContacts = (allContacts, filter) => {
-  const normalizedFilter = filter.toLocaleLowerCase();
-  return allContacts.filter((contact) =>
-    contact.name.toLocaleLowerCase().includes(normalizedFilter)
-  );
 };
 
 export default ContactList;

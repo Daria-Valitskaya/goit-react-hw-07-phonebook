@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import { onChangeFilter } from "../../redux/Contacts/contacts-actions";
 import s from "./Filter.module.css";
-
+import { getFilter } from "../../redux/Contacts/contacts-selectors";
 const Filter = () => {
-  const value = useSelector((state) => state.contacts.filter);
+  const value = useSelector(getFilter);
   const dispatch = useDispatch();
 
   return (
