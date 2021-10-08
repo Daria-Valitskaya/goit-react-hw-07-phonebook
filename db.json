@@ -1,19 +1,19 @@
 {
-  "posts": [
+  "contacts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Daria Valitskaya",
+      "number": "+380663578033",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Svetlana Valitskaya",
+      "number": "+380677324245",
+      "id": 2
+    },
+    {
+      "name": "Dmytro Valitskiy",
+      "number": "+380913733018",
+      "id": 3
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
