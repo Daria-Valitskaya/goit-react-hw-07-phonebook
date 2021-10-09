@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import ContactItem from "../ContactItem/ContactItem";
-import { onDeleteContact } from "../../redux/Contacts/contacts-actions";
+import { deleteContact } from "../../redux/Contacts/contacts-operations";
 import { getVisibleContacts } from "../../redux/Contacts/contacts-selectors";
 
 const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
-  const deleteContact = (id) => dispatch(onDeleteContact(id));
+  const onDeleteContact = (id) => dispatch(deleteContact(id));
   return (
     <ul>
       {contacts.map(({ id, number, name }) => (
@@ -16,7 +16,7 @@ const ContactList = () => {
             id={id}
             name={name}
             number={number}
-            deleteContact={deleteContact}
+            onDeleteContact={onDeleteContact}
           />
         </li>
       ))}
